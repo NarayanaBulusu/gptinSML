@@ -16,7 +16,7 @@ fun transformerBlock(input, weightsQ, weightsK, weightsV, config) =
 
         (* this is a Feedforward network *)
         val ffnOutput = gelu (hd residual1) (*this applies GELU activation to  output *)
-        val residual2 = map (fn (x, y)=> x+y)(ListPair.zip (hd norm1, hd ffnOutput)) (* Residual connection *)
+        val residual2 = map (fn (x, y)=> x+y)(ListPair.zip (hd norm1, hd ffnOutput)) (* res connection *)
         val norm2= layerNorm (Vector residual2) (* now mormalize the output *)
     in
         Matrix [residual2] end
