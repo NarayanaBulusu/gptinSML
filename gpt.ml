@@ -1,4 +1,6 @@
-(* now, we are implementing a gpt model *)
+(* now, we are implementing a gpt model 
+a base gpt 2.0 model
+*)
 
 (* this is a gpt model with multiple transformer blocks...*)
 fun gptModel(input,config) =
